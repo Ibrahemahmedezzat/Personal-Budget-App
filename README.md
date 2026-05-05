@@ -1,87 +1,149 @@
-💰 Personal Budget Management System
-📊 A Scalable Financial Intelligence Desktop Application
+<div align="center">
 
-A full-scale personal finance management system engineered to help users understand, control, and optimize their financial behavior through structured budgeting, real-time tracking, and data-driven insights.
+# 💰 Personal Budget Management System
 
-The system goes beyond simple expense tracking by implementing a layered software architecture that separates concerns across presentation, business logic, and data persistence, ensuring maintainability and long-term extensibility.
+**A full-featured desktop application to take control of your personal finances.**
 
-Built using Java + JavaFX, the application delivers a modern desktop experience with a responsive UI and an intuitive workflow that supports both novice and advanced users in managing their financial lifecycle.
+[![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
+[![JavaFX](https://img.shields.io/badge/JavaFX-GUI-blue?style=for-the-badge)](https://openjfx.io/)
+[![Architecture](https://img.shields.io/badge/Architecture-MVC-green?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)]()
 
-🧩 Core Functional Domains
+</div>
 
-💵 1. Financial Transaction Engine
-Continuous tracking of income and expenses
-Category-based classification (e.g., food, transport, utilities, etc.)
-Structured transaction history with persistent storage
-Support for extensible financial event types
+---
 
-📊 2. Budgeting & Allocation System
+## 📖 Overview
 
-Monthly budget creation per category
-Dynamic monitoring of spending vs allocated limits
-Real-time budget utilization feedback
-Early warning mechanism for overspending patterns
+The **Personal Budget Management System** is a desktop financial management application built with **Java** and **JavaFX**. It provides an intuitive, responsive UI that helps users track income and expenses, manage monthly budgets, set savings goals, and generate insightful financial reports — all in one place.
 
-🎯 3. Goal-Oriented Savings Module
+> 📚 Developed as part of **CS251 – Introduction to Software Engineering**, Cairo University.
 
-User-defined savings goals (short & long term)
-Progress tracking based on transaction behavior
-Automated calculation of achievement percentage
-Behavioral encouragement through visual feedback loops
+---
 
-📈 4. Analytical Reporting Layer
+## ✨ Features
 
-Financial summaries and breakdown reports
-Spending distribution visualization
-Income vs expense trend analysis
-Decision-support insights for financial planning
-🏗️ Software Architecture & Engineering Design
+| Feature | Description |
+|---|---|
+| 💵 **Income & Expense Tracking** | Log transactions with categories and dates |
+| 📅 **Budget Management** | Create and monitor monthly spending budgets |
+| 🎯 **Savings Goals** | Set savings targets and track progress visually |
+| 📊 **Financial Reports** | Generate analytical insights from your financial data |
+| 🖥️ **Modern JavaFX UI** | Clean, responsive, and user-friendly interface |
+| 💾 **Data Persistence** | All data saved locally via JSON-based storage |
 
-This system is designed using industry-aligned architectural principles:
+---
 
-🧱 Architecture Pattern
+## 🏗️ Architecture & Design
 
-MVC (Model–View–Controller)
-Clear separation between UI, business logic, and data layer
+This project follows industry-standard software engineering principles:
 
-⚙️ Engineering Principles
+- **MVC Architecture** — Clear separation of Model, View, and Controller layers
+- **OOP Principles** — Encapsulation, inheritance, and polymorphism throughout
+- **SOLID Principles** — Single responsibility, open/closed, and dependency inversion applied
+- **Modular Design** — Scalable, maintainable, and cleanly structured codebase
 
-Object-Oriented Programming (OOP)
-SOLID Principles for maintainability
-High cohesion, low coupling design
-Modular service-based structure
+---
 
-🧠 Code Design Quality
+## 🗂️ Project Structure
 
-Reusable service layer abstraction
-Controller-driven interaction flow
-Encapsulated domain models (User, Budget, Transaction, Goal)
-Extensible architecture for future feature scaling
+```
+Personal-Budget-App/
+│
+├── src/
+│   └── app/                   # Application source code (MVC structure)
+│
+├── Personal-Budget-App/        # JavaFX project module
+│
+├── data/                       # Application data directory
+│
+├── users.json                  # Persistent user data storage
+├── incomes.json                # Income records
+├── budgets.json                # Budget records
+│
+└── README.md
+```
 
-💾 Data Persistence & Storage
+---
 
-File-based / structured storage system (or database-ready design)
-Persistent user financial state across sessions
-Safe read/write abstraction layer
-Separation of data access logic (DAO-style structure)
+## 🚀 Getting Started
 
-🎨 UI/UX Layer (JavaFX)
+### Prerequisites
 
-Clean and responsive JavaFX interface
-Screen-based navigation system
-User-centric workflow design
-Separation between UI logic and business logic
-Interactive forms and dashboard views
+Make sure you have the following installed:
 
-🧠 Engineering Impact
+- [Java JDK 17+](https://adoptium.net/)
+- [JavaFX SDK](https://openjfx.io/)
+- An IDE such as [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [Eclipse](https://www.eclipse.org/) (recommended)
 
-This project demonstrates practical implementation of:
+### Installation
 
-Real-world software system design
-Scalable desktop application architecture
-Clean code principles in Java
-Layered system thinking (not just coding, but system engineering)
+1. **Clone the repository**
 
-🎓 Academic Context
+```bash
+git clone https://github.com/Ibrahemahmedezzat/Personal-Budget-App.git
+cd Personal-Budget-App
+```
 
-Developed as part of CS251 – Introduction to Software Engineering, Cairo University, focusing on applying software engineering principles in a real, working system rather than theoretical constructs.
+2. **Open in your IDE**
+
+   Import the project as a Java project. Make sure JavaFX is configured in your module path.
+
+3. **Configure JavaFX**
+
+   If using IntelliJ IDEA, add the following to your VM options:
+
+```
+--module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
+```
+
+4. **Run the application**
+
+   Locate and run the `Main` class inside `src/app/`.
+
+---
+
+## 📸 Screenshots
+
+> _Screenshots can be added here to showcase the UI — e.g., Dashboard, Budget view, Reports._
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Java** | Core application logic |
+| **JavaFX** | Desktop GUI framework |
+| **JSON** | Lightweight data persistence |
+| **MVC Pattern** | Application architecture |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To get started:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add your feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+---
+
+## 👥 Authors
+
+- **Ibrahem Ahmed Ezzat** — [@Ibrahemahmedezzat](https://github.com/Ibrahemahmedezzat)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ as part of CS251 – Introduction to Software Engineering · Cairo University</sub>
+</div>
