@@ -7,19 +7,18 @@ public class TransactionService {
 
     BudgetService b = new BudgetService();
 
-    public void add(int id, double a, String c) {
+    public void add(int id, double amount, String cat) {
 
-        if (a <= 0) {
-            System.out.println("❌ Invalid");
+        if (amount <= 0)
             return;
-        }
 
-        // 🔥 call budget check BEFORE saving
-        b.update(id, c, a);
+        // 🔥 FIRST: update budget
+        new BudgetService().update(id, cat, amount);
 
+        // THEN save transaction
         FileDatabase.save("transactions.txt",
-                id + "," + a + "," + c);
+                id + "," + amount + "," + cat);
 
-        System.out.println("✅ Transaction Added");
+        System.out.println("Transaction Added");
     }
 }

@@ -5,7 +5,7 @@ import java.util.*;
 
 public class ReportService {
 
-    public void show(int userId){
+    public void show(int userId) {
 
         System.out.println("\n📊 ===== REPORT =====");
 
@@ -13,9 +13,9 @@ public class ReportService {
 
         Map<String, Double> category = new HashMap<>();
 
-        for(String[] t : FileDatabase.read("transactions.txt")){
+        for (String[] t : FileDatabase.read("transactions.txt")) {
 
-            if(Integer.parseInt(t[0]) == userId){
+            if (Integer.parseInt(t[0]) == userId) {
 
                 double amount = Double.parseDouble(t[1]);
                 String cat = t[2];
@@ -23,17 +23,21 @@ public class ReportService {
                 total += amount;
 
                 category.put(cat,
-                    category.getOrDefault(cat,0.0) + amount);
+                        category.getOrDefault(cat, 0.0) + amount);
             }
         }
 
         System.out.println("💰 Total Spending: " + total);
 
         System.out.println("\n📂 By Category:");
-        for(String c : category.keySet()){
+        for (String c : category.keySet()) {
             System.out.println(c + " → " + category.get(c));
         }
 
         System.out.println("====================\n");
+    }
+
+    public void summary(int userId) {
+        show(userId); 
     }
 }

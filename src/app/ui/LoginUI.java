@@ -1,47 +1,52 @@
 package app.ui;
 
-import java.util.*;
-import app.controllers.*;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import app.controllers.UserController;
 import app.models.User;
 
 public class LoginUI {
 
-    Scanner sc=new Scanner(System.in);
-    UserController c=new UserController();
+    private Stage stage;
+    private UserController controller = new UserController();
+
+    public LoginUI(Stage stage){
+        this.stage = stage;
+    }
 
     public void show(){
 
-        while(true){
-            System.out.println("\n1-Login\n2-Signup\n3-Exit");
+        TextField username = new TextField();
+        username.setPromptText("Username");
 
-            int ch=Integer.parseInt(sc.nextLine());
+        PasswordField password = new PasswordField();
+        password.setPromptText("Password");
 
-            if(ch==1){
+        Button login = new Button("Login");
+        Button signup = new Button("Signup");
 
-                System.out.print("User: ");
-                String u=sc.nextLine();
+        Label msg = new Label();
 
-                System.out.print("Pass: ");
-                String p=sc.nextLine();
+        login.setOnAction(e -> {
+            User u = controller.login(username.getText(), password.getText());
 
-                User user=c.login(u,p);
+            if(u != null){
+                msg.setText("Login Success");
+                new MainMenu(stage, u).show();
+            } else {
+                msg.setText("Wrong credentials");
+            }
+        });
 
-                if(user!=null){
-                    System.out.println("Login Success ✅");
-                    new MainMenu(user).show();
-                }else System.out.println("Wrong ❌");
+        signup.setOnAction(e -> {
+            controller.signup(username.getText(), password.getText());
+            msg.setText("Signup Done");
+        });
 
-            }else if(ch==2){
-
-                System.out.print("User: ");
-                String u=sc.nextLine();
-
-                System.out.print("Pass: ");
-                String p=sc.nextLine();
-
-                c.signup(u,p);
-
-            }else return;
-        }
+        VBox root = new VBox(10, username, password, login, signup, msg);
+        stage.setScene(new Scene(root, 350, 250));
+        stage.show();
     }
 }

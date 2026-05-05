@@ -6,10 +6,18 @@ public class User {
     public String pass;
     public double salary;
 
-    public User(int id,String n,String p,double s){
-        this.id=id;
-        this.name=n;
-        this.pass=p;
-        this.salary=s;
+    public User(int id, String name, String pass, double salary) {
+        this.id = id;
+        this.name = name;
+        this.pass = pass;
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return this.salary;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }

@@ -41,7 +41,6 @@ public class BudgetService {
 
                 System.out.println("Preview: " + spent + "/" + limit);
 
-                // 🔥 IMPORTANT: نرجع السطر بعد التعديل
                 lines.add(userId + "," + cat + "," + limit + "," + spent);
 
             } else {

@@ -1,9 +1,9 @@
 package app;
 
-import app.ui.LoginUI;
+import javafx.application.Application;
 
 public class Main {
     public static void main(String[] args) {
-        new LoginUI().show();
+        Application.launch(App.class);
     }
 }
