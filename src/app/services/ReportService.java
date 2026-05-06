@@ -3,8 +3,19 @@ package app.services;
 import app.data.FileDatabase;
 import java.util.*;
 
+/**
+ * Service class responsible for generating financial reports for users.
+ * It analyzes transactions and provides summaries of total spending
+ * and spending breakdown by category.
+ */
 public class ReportService {
 
+    /**
+     * Displays a full financial report for a specific user.
+     * The report includes total spending and breakdown by category.
+     *
+     * @param userId the ID of the user whose report will be displayed
+     */
     public void show(int userId) {
 
         System.out.println("\n📊 ===== REPORT =====");
@@ -37,7 +48,13 @@ public class ReportService {
         System.out.println("====================\n");
     }
 
+    /**
+     * Displays a summary report for a user.
+     * This method currently calls {@link #show(int)} to present the full report.
+     *
+     * @param userId the ID of the user
+     */
     public void summary(int userId) {
-        show(userId); 
+        show(userId);
     }
 }

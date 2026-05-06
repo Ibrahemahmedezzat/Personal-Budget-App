@@ -7,15 +7,37 @@ import javafx.stage.Stage;
 import app.controllers.UserController;
 import app.models.User;
 
+/**
+ * User Interface class responsible for handling user authentication.
+ * It provides login and signup functionality and navigates to the
+ * main menu upon successful login.
+ */
 public class LoginUI {
 
+    /**
+     * The primary stage where the UI is displayed.
+     */
     private Stage stage;
+
+    /**
+     * Controller responsible for handling user operations.
+     */
     private UserController controller = new UserController();
 
+    /**
+     * Constructs the LoginUI with the given stage.
+     *
+     * @param stage the JavaFX stage used to display the UI
+     */
     public LoginUI(Stage stage){
         this.stage = stage;
     }
 
+    /**
+     * Displays the login screen.
+     * Allows users to log in or create a new account.
+     * On successful login, navigates to the MainMenu screen.
+     */
     public void show(){
 
         TextField username = new TextField();
