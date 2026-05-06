@@ -16,7 +16,7 @@ public class FileDatabase {
      * @param file the name of the file
      * @return the full path to the file
      */
-    private static String path(String file){
+    private static String buildPath(String file) {
         return "data/" + file;
     }
 
@@ -26,11 +26,11 @@ public class FileDatabase {
      * @param file the file name
      * @param data the data to be saved
      */
-    public static void save(String file, String data){
-        try (FileWriter fw = new FileWriter(path(file), true)) {
+    public static void save(String file, String data) {
+        try (FileWriter fw = new FileWriter(buildPath(file), true)) {
             fw.write(data + "\n");
-        } catch (Exception e) {
-            System.out.println("Save Error");
+        } catch (IOException e) {
+            System.out.println("Save Error: " + e.getMessage());
         }
     }
 
@@ -41,15 +41,17 @@ public class FileDatabase {
      * @param file the file name
      * @return a list of string arrays representing file rows
      */
-    public static List<String[]> read(String file){
+    public static List<String[]> read(String file) {
         List<String[]> list = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path(file)))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(buildPath(file)))) {
             String line;
-            while((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 list.add(line.split(","));
             }
-        } catch (Exception e) {}
+        } catch (IOException e) {
+            System.out.println("Read Error: " + e.getMessage());
+        }
 
         return list;
     }
@@ -60,13 +62,13 @@ public class FileDatabase {
      * @param file the file name
      * @param lines the new content to write into the file
      */
-    public static void overwrite(String file, List<String> lines){
-        try (FileWriter fw = new FileWriter(path(file), false)) {
-            for(String l : lines){
+    public static void overwrite(String file, List<String> lines) {
+        try (FileWriter fw = new FileWriter(buildPath(file), false)) {
+            for (String l : lines) {
                 fw.write(l + "\n");
             }
-        } catch (Exception e) {
-            System.out.println("Overwrite Error");
+        } catch (IOException e) {
+            System.out.println("Overwrite Error: " + e.getMessage());
         }
     }
 }

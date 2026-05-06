@@ -12,7 +12,7 @@ public class GoalController {
     /**
      * Service instance used to handle goal operations.
      */
-    GoalService s = new GoalService();
+    private GoalService goalService = new GoalService();
 
     /**
      * Creates a new financial or personal goal for a user.
@@ -22,7 +22,7 @@ public class GoalController {
      * @param target the target amount required to achieve the goal
      */
     public void create(int userId, String name, double target) {
-        s.create(userId, name, target);
+        goalService.create(userId, name, target);
     }
 
     /**
@@ -33,6 +33,6 @@ public class GoalController {
      * @param amount the amount to contribute toward the goal
      */
     public void addProgress(int userId, String name, double amount) {
-        s.contribute(userId, name, amount);
+        goalService.contribute(userId, name, amount);
     }
 }

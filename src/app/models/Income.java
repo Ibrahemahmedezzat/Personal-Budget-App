@@ -9,12 +9,12 @@ public class Income {
     /**
      * The ID of the user who received the income.
      */
-    public int userId;
+    private int userId;
 
     /**
      * The amount of money received as income.
      */
-    public double amount;
+    private double amount;
 
     /**
      * Creates a new income record for a specific user.
@@ -24,6 +24,20 @@ public class Income {
      */
     public Income(int userId, double amount) {
         this.userId = userId;
+        this.amount = amount;
+    }
+
+    // Getters
+    public int getUserId() {
+        return userId;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    // Optional setter (if needed)
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 }

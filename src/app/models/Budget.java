@@ -7,16 +7,16 @@ package app.models;
 public class Budget {
 
     /** The ID of the user who owns this budget */
-    public int userId;
+    private int userId;
 
     /** The category of the budget (e.g., Food, Transport) */
-    public String category;
+    private String category;
 
     /** The maximum allowed spending for this category */
-    public double limit;
+    private double limit;
 
     /** The amount already spent from this budget */
-    public double spent;
+    private double spent;
 
     /**
      * Constructs a new Budget object.
@@ -30,5 +30,27 @@ public class Budget {
         this.category = category;
         this.limit = limit;
         this.spent = 0;
+    }
+
+    // Getters
+    public int getUserId() {
+        return userId;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public double getLimit() {
+        return limit;
+    }
+
+    public double getSpent() {
+        return spent;
+    }
+
+    // Setter (only if needed)
+    public void setSpent(double spent) {
+        this.spent = spent;
     }
 }

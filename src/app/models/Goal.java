@@ -10,22 +10,22 @@ public class Goal {
     /**
      * The ID of the user who owns this goal.
      */
-    public int userId;
+    private int userId;
 
     /**
      * The name of the goal (e.g., Buy a car, Save for travel).
      */
-    public String name;
+    private String name;
 
     /**
      * The target amount that the user aims to achieve.
      */
-    public double target;
+    private double target;
 
     /**
      * The amount that has been saved so far toward the goal.
      */
-    public double saved;
+    private double saved;
 
     /**
      * Creates a new goal for a specific user with a name and target amount.
@@ -40,5 +40,27 @@ public class Goal {
         this.name = name;
         this.target = target;
         this.saved = 0;
+    }
+
+    // Getters
+    public int getUserId() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getTarget() {
+        return target;
+    }
+
+    public double getSaved() {
+        return saved;
+    }
+
+    // Setter (if needed)
+    public void setSaved(double saved) {
+        this.saved = saved;
     }
 }

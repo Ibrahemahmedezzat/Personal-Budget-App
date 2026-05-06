@@ -1,7 +1,6 @@
 package app.services;
 
 import app.data.FileDatabase;
-import app.models.User;
 
 /**
  * Service class responsible for handling user transactions.
@@ -9,11 +8,13 @@ import app.models.User;
  */
 public class TransactionService {
 
+    private static final String FILE_NAME = "transactions.txt";
+
     /**
      * Instance of BudgetService used to update budget information
      * whenever a new transaction is added.
      */
-    BudgetService b = new BudgetService();
+    private BudgetService budgetService = new BudgetService();
 
     /**
      * Adds a new financial transaction for a user.
@@ -22,19 +23,20 @@ public class TransactionService {
      *
      * @param id the ID of the user
      * @param amount the transaction amount (must be greater than 0)
-     * @param cat the category of the transaction (e.g., Food, Transport)
+     * @param category the category of the transaction (e.g., Food, Transport)
      */
-    public void add(int id, double amount, String cat) {
+    public void add(int id, double amount, String category) {
 
-        if (amount <= 0)
+        if (amount <= 0) {
             return;
+        }
 
-        //  FIRST: update budget
-        new BudgetService().update(id, cat, amount);
+        // FIRST: update budget
+        budgetService.update(id, category, amount);
 
         // THEN save transaction
-        FileDatabase.save("transactions.txt",
-                id + "," + amount + "," + cat);
+        FileDatabase.save(FILE_NAME,
+                id + "," + amount + "," + category);
 
         System.out.println("Transaction Added");
     }

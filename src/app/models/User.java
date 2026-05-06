@@ -9,53 +9,61 @@ public class User {
     /**
      * Unique identifier for the user.
      */
-    public int id;
+    private int id;
 
     /**
      * The name of the user.
      */
-    public String name;
+    private String name;
 
     /**
      * The password of the user (should be stored securely in real applications).
      */
-    public String pass;
+    private String password;
 
     /**
      * The monthly salary of the user.
      */
-    public double salary;
+    private double salary;
 
     /**
      * Creates a new user with the given details.
      *
      * @param id the unique user ID
      * @param name the name of the user
-     * @param pass the user's password
+     * @param password the user's password
      * @param salary the user's salary
      */
-    public User(int id, String name, String pass, double salary) {
+    public User(int id, String name, String password, double salary) {
         this.id = id;
         this.name = name;
-        this.pass = pass;
+        this.password = password;
         this.salary = salary;
     }
 
-    /**
-     * Returns the salary of the user.
-     *
-     * @return the user's salary
-     */
-    public double getSalary() {
-        return this.salary;
+    // Getters
+    public int getId() {
+        return id;
     }
 
-    /**
-     * Returns the user's ID.
-     *
-     * @return the user ID
-     */
-    public int getId() {
-        return this.id;
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    // Optional setters (if needed)
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

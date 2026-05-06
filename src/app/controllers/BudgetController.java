@@ -12,7 +12,7 @@ public class BudgetController {
     /**
      * Service instance used to handle budget operations.
      */
-    BudgetService s = new BudgetService();
+    private BudgetService budgetService = new BudgetService();
 
     /**
      * Creates a new budget for a user in a specific category.
@@ -22,19 +22,17 @@ public class BudgetController {
      * @param limit the maximum allowed spending for the category
      */
     public void create(int userId, String category, double limit) {
-        s.create(userId, category, limit);
+        budgetService.create(userId, category, limit);
     }
 
     /**
      * Checks and updates the budget after a new spending transaction.
-     * Delegates the operation to the BudgetService to update usage
-     * and display warnings if needed.
      *
      * @param userId the ID of the user
      * @param category the budget category
      * @param amount the spending amount to check against the budget
      */
     public void checkBudget(int userId, String category, double amount) {
-        s.update(userId, category, amount);
+        budgetService.update(userId, category, amount);
     }
 }

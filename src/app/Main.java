@@ -1,20 +1,28 @@
 package app;
 
 import javafx.application.Application;
+import javafx.stage.Stage;
+import app.ui.LoginUI;
 
 /**
- * Entry point of the application.
- * This class is responsible for launching the JavaFX application
- * by calling the {@link App} class.
+ * Main application class that starts the JavaFX program.
  */
-public class Main {
+public class Main extends Application {
 
     /**
-     * Main method that starts the application.
-     *
-     * @param args command-line arguments (not used)
+     * Entry point of JavaFX application.
      */
     public static void main(String[] args) {
-        Application.launch(App.class);
+        launch(args);
+    }
+
+    /**
+     * Initializes and displays the login screen.
+     */
+    @Override
+    public void start(Stage stage) {
+
+        LoginUI loginUI = new LoginUI(stage);
+        loginUI.show();
     }
 }
