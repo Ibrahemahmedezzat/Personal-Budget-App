@@ -10,6 +10,8 @@ import java.util.*;
  */
 public class ReportService {
 
+    private static final String FILE_NAME = "transactions.txt";
+
     /**
      * Displays a full financial report for a specific user.
      * The report includes total spending and breakdown by category.
@@ -22,27 +24,28 @@ public class ReportService {
 
         double total = 0;
 
-        Map<String, Double> category = new HashMap<>();
+        Map<String, Double> categoryTotals = new HashMap<>();
 
-        for (String[] t : FileDatabase.read("transactions.txt")) {
+        for (String[] t : FileDatabase.read(FILE_NAME)) {
 
             if (Integer.parseInt(t[0]) == userId) {
 
                 double amount = Double.parseDouble(t[1]);
-                String cat = t[2];
+                String category = t[2];
 
                 total += amount;
 
-                category.put(cat,
-                        category.getOrDefault(cat, 0.0) + amount);
+                categoryTotals.put(category,
+                        categoryTotals.getOrDefault(category, 0.0) + amount);
             }
         }
 
         System.out.println("💰 Total Spending: " + total);
 
         System.out.println("\n📂 By Category:");
-        for (String c : category.keySet()) {
-            System.out.println(c + " → " + category.get(c));
+
+        for (Map.Entry<String, Double> entry : categoryTotals.entrySet()) {
+            System.out.println(entry.getKey() + " → " + entry.getValue());
         }
 
         System.out.println("====================\n");

@@ -8,86 +8,89 @@ import app.models.User;
 import app.controllers.BudgetController;
 
 /**
- * User Interface class responsible for creating and managing
- * the budget creation screen.
- * It allows users to define budget categories and limits,
+ * UI screen responsible for creating and managing user budgets.
+ * Allows the user to define a budget category and limit,
  * and navigate back to the main menu.
  */
 public class BudgetUI {
 
-    /**
-     * The primary stage where the UI is displayed.
-     */
+    // Primary stage used to display the scene
     private Stage stage;
 
-    /**
-     * The currently logged-in user.
-     */
+    // Currently logged-in user
     private User user;
 
-    /**
-     * Reference to the main menu UI for navigation.
-     */
+    // Reference to main menu screen for navigation
     private MainMenu mainMenu;
 
-    /**
-     * Controller responsible for handling budget operations.
-     */
+    // Controller responsible for budget business logic
     private BudgetController controller = new BudgetController();
 
     /**
-     * Constructs the BudgetUI with required dependencies.
+     * Constructor initializes BudgetUI with required dependencies.
      *
      * @param stage the JavaFX stage
-     * @param user the current logged-in user
-     * @param mainMenu reference to the main menu screen
+     * @param user the logged-in user
+     * @param mainMenu reference to main menu UI
      */
-    public BudgetUI(Stage stage, User user, MainMenu mainMenu){
+    public BudgetUI(Stage stage, User user, MainMenu mainMenu) {
         this.stage = stage;
         this.user = user;
         this.mainMenu = mainMenu;
     }
 
     /**
-     * Displays the budget creation screen.
-     * Allows the user to enter a category and budget limit,
-     * validate input, and save the budget.
+     * Builds and displays the Budget UI screen.
+     * Handles user input, validation, and navigation.
      */
-    public void show(){
+    public void show() {
 
+        // Input field for budget category
         TextField category = new TextField();
         category.setPromptText("Category");
 
+        // Input field for budget limit
         TextField limit = new TextField();
         limit.setPromptText("Limit");
 
+        // Button to save budget
         Button save = new Button("Save");
 
+        // Button to return to main menu
         Button back = new Button("Back to Menu");
 
+        // Message label for feedback
         Label msg = new Label();
 
+        // Handle save action
         save.setOnAction(e -> {
             try {
                 double l = Double.parseDouble(limit.getText());
 
-                if(l > user.getSalary()){
+                // Validate budget does not exceed salary
+                if (l > user.getSalary()) {
                     msg.setText("Budget > Salary ❌");
                     return;
                 }
 
+                // Create budget using controller
                 controller.create(user.getId(), category.getText(), l);
                 msg.setText("Budget Created ✅");
-            } catch (Exception ex) {
+
+            } catch (NumberFormatException ex) {
                 msg.setText("Invalid Input!");
             }
         });
 
-        back.setOnAction(e -> {
-            mainMenu.show();
-        });
+        // Navigate back to main menu
+        back.setOnAction(e -> mainMenu.show());
 
+        // Layout container
         VBox root = new VBox(10, category, limit, save, back, msg);
+
+        // Set scene and display stage
         stage.setScene(new Scene(root, 350, 300));
+        stage.setTitle("Manage Budget");
+        stage.show();
     }
 }

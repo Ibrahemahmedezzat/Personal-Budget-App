@@ -1,8 +1,6 @@
 package app.services;
 
 import app.data.FileDatabase;
-import app.models.User;
-
 import java.util.*;
 
 /**
@@ -12,17 +10,19 @@ import java.util.*;
  */
 public class BudgetService {
 
+    private static final String FILE_NAME = "budgets.txt";
+
     /**
      * Creates a new budget for a user and saves it to the database file.
      *
      * @param id the ID of the user
-     * @param cat the budget category (e.g., Food, Transport)
+     * @param category the budget category (e.g., Food, Transport)
      * @param limit the maximum allowed spending for this category
      */
-    public void create(int id, String cat, double limit) {
+    public void create(int id, String category, double limit) {
 
-        FileDatabase.save("budgets.txt",
-                id + "," + cat + "," + limit + ",0");
+        FileDatabase.save(FILE_NAME,
+                id + "," + category + "," + limit + ",0");
 
         System.out.println("Budget Created ✅");
     }
@@ -33,22 +33,23 @@ public class BudgetService {
      * if the budget is near or over the limit.
      *
      * @param userId the ID of the user
-     * @param cat the budget category to update
+     * @param category the budget category to update
      * @param amount the spending amount to add
      */
-    public void update(int userId, String cat, double amount) {
+    public void update(int userId, String category, double amount) {
 
         List<String> lines = new ArrayList<>();
         boolean found = false;
 
-        for (String[] b : FileDatabase.read("budgets.txt")) {
+        for (String[] budget : FileDatabase.read(FILE_NAME)) {
 
-            if (Integer.parseInt(b[0]) == userId && b[1].equals(cat)) {
+            if (Integer.parseInt(budget[0]) == userId &&
+                    budget[1].equals(category)) {
 
                 found = true;
 
-                double limit = Double.parseDouble(b[2]);
-                double spent = Double.parseDouble(b[3]);
+                double limit = Double.parseDouble(budget[2]);
+                double spent = Double.parseDouble(budget[3]);
 
                 spent += amount;
 
@@ -62,15 +63,16 @@ public class BudgetService {
 
                 System.out.println("Preview: " + spent + "/" + limit);
 
-                lines.add(userId + "," + cat + "," + limit + "," + spent);
+                lines.add(userId + "," + category + "," + limit + "," + spent);
 
             } else {
-                lines.add(b[0] + "," + b[1] + "," + b[2] + "," + b[3]);
+                lines.add(budget[0] + "," + budget[1] + "," +
+                        budget[2] + "," + budget[3]);
             }
         }
 
         if (found) {
-            FileDatabase.overwrite("budgets.txt", lines);
+            FileDatabase.overwrite(FILE_NAME, lines);
         }
     }
 }

@@ -13,7 +13,7 @@ public class UserController {
     /**
      * Service instance used to handle user operations.
      */
-    UserService s = new UserService();
+    private UserService userService = new UserService();
 
     /**
      * Registers a new user in the system.
@@ -22,7 +22,7 @@ public class UserController {
      * @param password the password of the new user
      */
     public void signup(String username, String password) {
-        s.signup(username, password);
+        userService.signup(username, password);
     }
 
     /**
@@ -33,7 +33,7 @@ public class UserController {
      * @return the authenticated User object if login is successful, otherwise null
      */
     public User login(String username, String password) {
-        return s.login(username, password);
+        return userService.login(username, password);
     }
 
     /**
@@ -44,6 +44,6 @@ public class UserController {
      * @param amount the spending amount to update
      */
     public void updateBudget(int userId, String category, double amount) {
-        s.update(userId, category, amount);
+        userService.update(userId, category, amount);
     }
 }

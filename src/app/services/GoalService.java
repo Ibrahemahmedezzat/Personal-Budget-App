@@ -9,6 +9,8 @@ import app.data.FileDatabase;
  */
 public class GoalService {
 
+    private static final String FILE_NAME = "goals.txt";
+
     /**
      * Creates a new financial goal for a user and saves it to the database file.
      *
@@ -18,7 +20,7 @@ public class GoalService {
      */
     public void create(int id, String name, double target) {
 
-        FileDatabase.save("goals.txt",
+        FileDatabase.save(FILE_NAME,
                 id + "," + name + "," + target + ",0");
 
         System.out.println("🎯 Goal Created");
@@ -35,7 +37,7 @@ public class GoalService {
      */
     public void contribute(int id, String name, double amount) {
 
-        for (String[] g : FileDatabase.read("goals.txt")) {
+        for (String[] g : FileDatabase.read(FILE_NAME)) {
 
             if (Integer.parseInt(g[0]) == id && g[1].equals(name)) {
 
@@ -51,6 +53,8 @@ public class GoalService {
                 } else {
                     System.out.println("📈 Progress: " + percent + "%");
                 }
+
+                // (optional improvement in real system: persist update)
             }
         }
     }

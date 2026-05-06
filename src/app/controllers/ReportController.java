@@ -12,7 +12,7 @@ public class ReportController {
     /**
      * Service instance used to generate financial reports.
      */
-    ReportService s = new ReportService();
+    private ReportService reportService = new ReportService();
 
     /**
      * Displays a full financial report for a specific user.
@@ -20,7 +20,7 @@ public class ReportController {
      * @param userId the ID of the user whose report will be displayed
      */
     public void show(int userId) {
-        s.show(userId);
+        reportService.show(userId);
     }
 
     /**
@@ -30,6 +30,6 @@ public class ReportController {
      * @param userId the ID of the user
      */
     public void getSummary(int userId) {
-        s.summary(userId);
+        reportService.summary(userId);
     }
 }

@@ -12,7 +12,7 @@ public class TransactionController {
     /**
      * Service instance used to manage transaction operations.
      */
-    TransactionService s = new TransactionService();
+    private TransactionService transactionService = new TransactionService();
 
     /**
      * Adds a new financial transaction for a user.
@@ -22,6 +22,6 @@ public class TransactionController {
      * @param category the category of the transaction (e.g., Food, Transport)
      */
     public void add(int userId, double amount, String category) {
-        s.add(userId, amount, category);
+        transactionService.add(userId, amount, category);
     }
 }
