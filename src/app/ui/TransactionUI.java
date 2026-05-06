@@ -7,17 +7,44 @@ import javafx.stage.Stage;
 import app.models.User;
 import app.controllers.TransactionController;
 
+/**
+ * User Interface class responsible for handling transaction input.
+ * It allows users to add financial transactions with amount and category,
+ * and confirms the action before saving.
+ */
 public class TransactionUI {
 
+    /**
+     * The primary stage where the UI is displayed.
+     */
     private Stage stage;
+
+    /**
+     * The currently logged-in user.
+     */
     private User user;
+
+    /**
+     * Controller responsible for handling transaction operations.
+     */
     private TransactionController controller = new TransactionController();
 
+    /**
+     * Constructs the TransactionUI with required dependencies.
+     *
+     * @param stage the JavaFX stage used for displaying the UI
+     * @param user the currently logged-in user
+     */
     public TransactionUI(Stage stage, User user){
         this.stage = stage;
         this.user = user;
     }
 
+    /**
+     * Displays the transaction input screen.
+     * Allows the user to enter an amount and category, confirms the action,
+     * and submits the transaction through the controller.
+     */
     public void show(){
 
         TextField amount = new TextField();
