@@ -68,28 +68,31 @@ Summary statistics for better decision-making
 🏗️ Project Architecture
 
 The project follows a layered modular structure:
+
+### 🏗️ Project Architecture
+
+```text
 BudgetApp/
-├── 📁 src/
-│   ├── 📁 models/              # Data Entities
-│   │   ├── User.java
-│   │   ├── Budget.java
-│   │   ├── Expense.java
-│   │   ├── Income.java
-│   │   └── SavingsGoal.java
-│   ├── 📁 services/            # Business Logic
-│   │   ├── AuthService.java
-│   │   ├── BudgetService.java
-│   │   ├── TransactionService.java
-│   │   └── ReportService.java
-│   ├── 📁 ui/                  # Presentation Layer
-│   │   ├── MainMenu.java
-│   │   ├── UserMenu.java
-│   │   └── InputHandler.java
-│   ├── 📁 database/            # Data Access & Storage
-│   │   ├── FileManager.java
-│   │   └── DataStorage.java
-│   └── Main.java               # Application Entry Point
-└── 📄 README.md
+└── src/
+    ├── models/                # Data Entities
+    │   ├── User.java
+    │   ├── Budget.java
+    │   ├── Expense.java
+    │   ├── Income.java
+    │   └── SavingsGoal.java
+    ├── services/              # Business Logic
+    │   ├── AuthService.java
+    │   ├── BudgetService.java
+    │   ├── TransactionService.java
+    │   └── ReportService.java
+    ├── ui/                    # Presentation Layer
+    │   ├── MainMenu.java
+    │   ├── UserMenu.java
+    │   └── InputHandler.java
+    ├── database/              # Data Access & Storage
+    │   ├── FileManager.java
+    │   └── DataStorage.java
+    └── Main.java              # Application Entry Point
 
 ▶️ How to Run the Project
 
