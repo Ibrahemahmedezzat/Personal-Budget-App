@@ -5,6 +5,7 @@ A Java Console-Based Personal Finance Management System designed to help users e
 🎯 Project Overview
 
 The Budget App is built to simulate a real-world personal finance tracker.
+
 It allows users to take full control of their financial life by:
 
 Tracking daily expenses and income
@@ -13,35 +14,47 @@ Setting savings goals
 Receiving financial alerts
 Viewing detailed reports and statistics
 
-The system is fully console-based and follows Object-Oriented Programming (OOP) principles with modular architecture and file-based data persistence.
+The system is fully console-based and follows Object-Oriented Programming (OOP) principles with a modular architecture and file-based data storage.
 
 ✨ Key Features
 
 🔐 Authentication System
+
 User Signup
 Secure Login
 Basic session handling
+
 💰 Budget Management
+
 Create budgets per category (Food, Transport, etc.)
 Set monthly spending limits
 Monitor remaining budget
+
 📉 Expense & Income Tracking
+
 Add income sources
 Record daily expenses
 Categorize transactions
 Track financial flow over time
+
 🚨 Financial Alerts
+
 Alerts when spending exceeds budget limits
 Warnings for low savings balance
 Smart notifications based on user activity
+
 🎯 Savings Goals
+
 Set financial goals (e.g., Buy a Laptop, Travel)
 Track progress toward goals
 Automatic savings calculations
+
 📊 Reports & Statistics
+
 Monthly income vs expenses report
 Category-based spending analysis
 Summary statistics for better decision-making
+
 🧠 Technologies Used
 ☕ Java (Core Programming Language)
 🧱 Object-Oriented Programming (OOP Principles)
@@ -53,7 +66,7 @@ The project follows a layered modular structure:
 
 BudgetApp/
 │
-├── models/       
+├── models/
 │   ├── User
 │   ├── Budget
 │   ├── Expense
@@ -75,21 +88,30 @@ BudgetApp/
 │   ├── FileManager
 │   ├── DataStorage
 │
-└── Main.java   # Application Entry Point
+└── Main.java
 ▶️ How to Run the Project
+
 1️⃣ Prerequisites
+
 Install Java JDK 8+
-Install IntelliJ IDEA / VS Code
+Install IntelliJ IDEA or VS Code
+
 2️⃣ Setup
+
 Clone or download the project
 Open it in your IDE
+
 3️⃣ Run
+
 Compile all .java files
 Run Main.java
+
 4️⃣ Start Using
+
 Create an account
 Login
 Start managing your budget 💸
+
 📈 Project Goals
 
 This project was developed to:
@@ -98,12 +120,15 @@ Strengthen understanding of OOP concepts
 Practice real-world system design
 Improve problem-solving with Java
 Simulate a financial management system
+
 👥 Team Members
-Ibrahem Ahmed
+Ibrahim Ahmed
 Mohamed Abdullah 
 Hesham Mohamed
 Youssef Sayed
+
 🚀 Future Improvements
+
 🖥️ GUI version using JavaFX or Swing
 🗄️ Database integration (MySQL / SQLite)
 📊 Graphical reports and charts
@@ -111,6 +136,7 @@ Youssef Sayed
 📱 Mobile version (Android app)
 🔔 Advanced smart notifications system
 📌 Notes
+
 This project is fully console-based
 Data is stored using file handling (no database)
 Designed for educational and learning purposes
