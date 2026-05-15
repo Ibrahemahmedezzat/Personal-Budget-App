@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Package Overview – BudgetApp JavaDoc</title>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<div class="topbar">
+  <span class="logo">💰 BudgetApp JavaDoc</span>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="allclasses-index.html">All Classes</a>
+    <a href="overview-summary.html">Package Summary</a>
+  </nav>
+</div>
+<div class="breadcrumb">
+  <a href="index.html">BudgetApp</a> › Package Overview
+</div>
+<div class="layout">
+  <div class="sidebar"><h3>Controllers</h3><ul><li><a href="controllers/TransactionController.html" class="">TransactionController</a></li><li><a href="controllers/UserController.html" class="">UserController</a></li><li><a href="controllers/BudgetController.html" class="">BudgetController</a></li><li><a href="controllers/GoalController.html" class="">GoalController</a></li><li><a href="controllers/ReportController.html" class="">ReportController</a></li></ul><h3>Services</h3><ul><li><a href="services/TransactionService.html" class="">TransactionService</a></li><li><a href="services/BudgetService.html" class="">BudgetService</a></li><li><a href="services/ReportService.html" class="">ReportService</a></li><li><a href="services/GoalService.html" class="">GoalService</a></li><li><a href="services/UserService.html" class="">UserService</a></li></ul><h3>Models</h3><ul><li><a href="models/User.html" class="">User</a></li><li><a href="models/Transaction.html" class="">Transaction</a></li><li><a href="models/Budget.html" class="">Budget</a></li><li><a href="models/Goal.html" class="">Goal</a></li><li><a href="models/Income.html" class="">Income</a></li></ul><h3>UI</h3><ul><li><a href="ui/LoginScreen.html" class="">LoginScreen</a></li><li><a href="ui/DashboardScreen.html" class="">DashboardScreen</a></li><li><a href="ui/NavigationService.html" class="">NavigationService</a></li><li><a href="ui/MainScreen.html" class="">MainScreen</a></li></ul><h3>Data</h3><ul><li><a href="data/FileDatabase.html" class="">FileDatabase</a></li></ul></div>
+  <div class="main">
+<h1>Package Overview</h1>
+<table>
+<thead><tr><th>Package</th><th>Classes</th><th>Role in MVC</th><th>SOLID Applied</th></tr></thead>
+<tbody>
+<tr><td><code>app</code></td><td>Main</td><td>Bootstrap</td><td>–</td></tr>
+<tr><td><code>app.models</code></td><td>User, Transaction, Budget, Goal, Income</td><td>Model (Data)</td><td>S – pure data containers</td></tr>
+<tr><td><code>app.controllers</code></td><td>UserController, TransactionController, BudgetController, GoalController, ReportController</td><td>Controller</td><td>S – one domain per controller; D – UI → Controller abstraction</td></tr>
+<tr><td><code>app.services</code></td><td>UserService, TransactionService, BudgetService, GoalService, ReportService</td><td>Model (Logic)</td><td>S – one service per domain; O – extend without modifying callers; D – services → FileDatabase</td></tr>
+<tr><td><code>app.ui</code></td><td>LoginScreen, MainScreen, DashboardScreen, TransactionScreen, BudgetScreen, GoalScreen, ReportScreen, NavigationService, AppStyles</td><td>View</td><td>S – NavigationService owns ALL navigation; D – screens → controllers</td></tr>
+<tr><td><code>app.data</code></td><td>FileDatabase</td><td>Data Access Object</td><td>S – only file I/O; O – switch to DB = change only this class</td></tr>
+</tbody>
+</table>
+<h2>Storage Files</h2>
+<table>
+<thead><tr><th>File</th><th>Format (CSV)</th><th>Written by</th></tr></thead>
+<tbody>
+<tr><td><code>data/users.txt</code></td><td>userId,name,password,salary</td><td>UserService.signup()</td></tr>
+<tr><td><code>data/transactions.txt</code></td><td>userId,amount,category</td><td>TransactionService.add()</td></tr>
+<tr><td><code>data/budgets.txt</code></td><td>userId,category,limit,spent</td><td>BudgetService (create/update)</td></tr>
+<tr><td><code>data/goals.txt</code></td><td>userId,name,target,saved</td><td>GoalService.create()</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer>BudgetApp JavaDoc · CS251 – Cairo University · May 2026</footer>
+</body>
+</html>

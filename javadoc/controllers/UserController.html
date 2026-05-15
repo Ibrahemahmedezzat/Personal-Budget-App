@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UserController – BudgetApp JavaDoc</title>
+<link rel="stylesheet" href="../stylesheet.css">
+</head>
+<body>
+<div class="topbar">
+  <span class="logo">💰 BudgetApp JavaDoc</span>
+  <nav>
+    <a href="../index.html">Overview</a>
+    <a href="../allclasses-index.html">All Classes</a>
+    <a href="../overview-summary.html">Package Summary</a>
+  </nav>
+</div>
+<div class="breadcrumb">
+  <a href="../index.html">BudgetApp</a> › app.controllers › UserController
+</div>
+<div class="layout">
+  <div class="sidebar"><h3>Controllers</h3><ul><li><a href="../controllers/TransactionController.html" class="">TransactionController</a></li><li><a href="../controllers/UserController.html" class="active">UserController</a></li><li><a href="../controllers/BudgetController.html" class="">BudgetController</a></li><li><a href="../controllers/GoalController.html" class="">GoalController</a></li><li><a href="../controllers/ReportController.html" class="">ReportController</a></li></ul><h3>Services</h3><ul><li><a href="../services/TransactionService.html" class="">TransactionService</a></li><li><a href="../services/BudgetService.html" class="">BudgetService</a></li><li><a href="../services/ReportService.html" class="">ReportService</a></li><li><a href="../services/GoalService.html" class="">GoalService</a></li><li><a href="../services/UserService.html" class="">UserService</a></li></ul><h3>Models</h3><ul><li><a href="../models/User.html" class="">User</a></li><li><a href="../models/Transaction.html" class="">Transaction</a></li><li><a href="../models/Budget.html" class="">Budget</a></li><li><a href="../models/Goal.html" class="">Goal</a></li><li><a href="../models/Income.html" class="">Income</a></li></ul><h3>UI</h3><ul><li><a href="../ui/LoginScreen.html" class="">LoginScreen</a></li><li><a href="../ui/DashboardScreen.html" class="">DashboardScreen</a></li><li><a href="../ui/NavigationService.html" class="">NavigationService</a></li><li><a href="../ui/MainScreen.html" class="">MainScreen</a></li></ul><h3>Data</h3><ul><li><a href="../data/FileDatabase.html" class="">FileDatabase</a></li></ul></div>
+  <div class="main">
+<div class="class-header">
+  <div class="hierarchy">java.lang.Object → app.controllers.UserController</div>
+  <h1><span class="badge badge-controller">app.controllers</span> UserController</h1>
+</div>
+<div class="class-body">
+  <div class="class-desc">Controller class responsible for handling user-related requests such as signup, login, and budget updates. Acts as a bridge between the UI presentation layer and the <a href='../services/UserService.html'>UserService</a>. <br><br>This class is part of the <strong>MVC Controller layer</strong>.</div>
+  <div class="index-card" style="background:#f0fdf4;border-color:#86efac"><h3>⚙️ SOLID Notes</h3><p><strong>S</strong> – handles only user-domain requests. &nbsp;<strong>D</strong> – UI depends on this controller abstraction, not directly on UserService.</p></div>
+</div>
+<h2>Field Summary</h2><table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userService</code></td><td><code>UserService</code></td><td>Service instance for all user operations</td></tr></tbody></table>
+<h2>Constructor Summary</h2><table><thead><tr><th>Constructor</th><th>Description</th></tr></thead><tbody><tr><td><code>UserController()</code></td><td>Creates a new UserController with a default UserService instance.</td></tr></tbody></table>
+<h2>Method Details</h2><div class="method-detail"><div class="method-sig">void signup(String username, String password, double salary)</div><div class="method-body"><p>Registers a new user account in the system.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>username</code></td><td><code>String</code></td><td>The chosen username</td></tr><tr><td><code>password</code></td><td><code>String</code></td><td>The chosen password</td></tr><tr><td><code>salary</code></td><td><code>double</code></td><td>Monthly income amount in EGP</td></tr></tbody></table></div></div><div class="method-detail"><div class="method-sig">User login(String username, String password)</div><div class="method-body"><p>Authenticates a user. Reads credentials from the file database and returns the matching User.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>username</code></td><td><code>String</code></td><td>The username to authenticate</td></tr><tr><td><code>password</code></td><td><code>String</code></td><td>The password to verify</td></tr></tbody></table><div class="returns">↩ Returns: the authenticated <code>User</code> object, or <code>null</code> if credentials are invalid</div></div></div><div class="method-detail"><div class="method-sig">void updateBudget(int userId, String category, double amount)</div><div class="method-body"><p>Triggers a budget update after a spending transaction.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>The ID of the user</td></tr><tr><td><code>category</code></td><td><code>String</code></td><td>The budget category (e.g., Food, Transport)</td></tr><tr><td><code>amount</code></td><td><code>double</code></td><td>The amount spent</td></tr></tbody></table></div></div>
+</div>
+</div>
+<footer>BudgetApp JavaDoc · CS251 – Cairo University · May 2026</footer>
+</body>
+</html>

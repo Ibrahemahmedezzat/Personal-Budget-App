@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Goal – BudgetApp JavaDoc</title>
+<link rel="stylesheet" href="../stylesheet.css">
+</head>
+<body>
+<div class="topbar">
+  <span class="logo">💰 BudgetApp JavaDoc</span>
+  <nav>
+    <a href="../index.html">Overview</a>
+    <a href="../allclasses-index.html">All Classes</a>
+    <a href="../overview-summary.html">Package Summary</a>
+  </nav>
+</div>
+<div class="breadcrumb">
+  <a href="../index.html">BudgetApp</a> › app.models › Goal
+</div>
+<div class="layout">
+  <div class="sidebar"><h3>Controllers</h3><ul><li><a href="../controllers/TransactionController.html" class="">TransactionController</a></li><li><a href="../controllers/UserController.html" class="">UserController</a></li><li><a href="../controllers/BudgetController.html" class="">BudgetController</a></li><li><a href="../controllers/GoalController.html" class="">GoalController</a></li><li><a href="../controllers/ReportController.html" class="">ReportController</a></li></ul><h3>Services</h3><ul><li><a href="../services/TransactionService.html" class="">TransactionService</a></li><li><a href="../services/BudgetService.html" class="">BudgetService</a></li><li><a href="../services/ReportService.html" class="">ReportService</a></li><li><a href="../services/GoalService.html" class="">GoalService</a></li><li><a href="../services/UserService.html" class="">UserService</a></li></ul><h3>Models</h3><ul><li><a href="../models/User.html" class="">User</a></li><li><a href="../models/Transaction.html" class="">Transaction</a></li><li><a href="../models/Budget.html" class="">Budget</a></li><li><a href="../models/Goal.html" class="active">Goal</a></li><li><a href="../models/Income.html" class="">Income</a></li></ul><h3>UI</h3><ul><li><a href="../ui/LoginScreen.html" class="">LoginScreen</a></li><li><a href="../ui/DashboardScreen.html" class="">DashboardScreen</a></li><li><a href="../ui/NavigationService.html" class="">NavigationService</a></li><li><a href="../ui/MainScreen.html" class="">MainScreen</a></li></ul><h3>Data</h3><ul><li><a href="../data/FileDatabase.html" class="">FileDatabase</a></li></ul></div>
+  <div class="main">
+<div class="class-header">
+  <div class="hierarchy">java.lang.Object → app.models.Goal</div>
+  <h1><span class="badge badge-model">app.models</span> Goal</h1>
+</div>
+<div class="class-body">
+  <div class="class-desc">Represents a financial savings goal. Tracks name, target amount, and amount saved so far.</div>
+  <div class="index-card" style="background:#f0fdf4;border-color:#86efac"><h3>⚙️ SOLID Notes</h3><p><strong>S</strong> – pure data container.</p></div>
+</div>
+<h2>Field Summary</h2><table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>Owner's user ID</td></tr><tr><td><code>name</code></td><td><code>String</code></td><td>Goal name</td></tr><tr><td><code>target</code></td><td><code>double</code></td><td>Target amount to reach</td></tr><tr><td><code>saved</code></td><td><code>double</code></td><td>Amount saved so far (starts at 0)</td></tr></tbody></table>
+<h2>Constructor Summary</h2><table><thead><tr><th>Constructor</th><th>Description</th></tr></thead><tbody><tr><td><code>Goal(int userId, String name, double target)</code></td><td>Creates a Goal with saved=0.</td></tr></tbody></table>
+<h2>Method Details</h2><div class="method-detail"><div class="method-sig">int getUserId()</div><div class="method-body"><p>Returns the owner's user ID.</p><div class="returns">↩ Returns: user ID</div></div></div><div class="method-detail"><div class="method-sig">String getName()</div><div class="method-body"><p>Returns the goal name.</p><div class="returns">↩ Returns: name</div></div></div><div class="method-detail"><div class="method-sig">double getTarget()</div><div class="method-body"><p>Returns the target amount.</p><div class="returns">↩ Returns: target</div></div></div><div class="method-detail"><div class="method-sig">double getSaved()</div><div class="method-body"><p>Returns the amount saved so far.</p><div class="returns">↩ Returns: saved amount</div></div></div><div class="method-detail"><div class="method-sig">void setSaved(double saved)</div><div class="method-body"><p>Sets the saved amount.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>saved</code></td><td><code>double</code></td><td>New saved value</td></tr></tbody></table></div></div>
+</div>
+</div>
+<footer>BudgetApp JavaDoc · CS251 – Cairo University · May 2026</footer>
+</body>
+</html>

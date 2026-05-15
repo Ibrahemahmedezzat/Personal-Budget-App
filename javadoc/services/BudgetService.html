@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BudgetService – BudgetApp JavaDoc</title>
+<link rel="stylesheet" href="../stylesheet.css">
+</head>
+<body>
+<div class="topbar">
+  <span class="logo">💰 BudgetApp JavaDoc</span>
+  <nav>
+    <a href="../index.html">Overview</a>
+    <a href="../allclasses-index.html">All Classes</a>
+    <a href="../overview-summary.html">Package Summary</a>
+  </nav>
+</div>
+<div class="breadcrumb">
+  <a href="../index.html">BudgetApp</a> › app.services › BudgetService
+</div>
+<div class="layout">
+  <div class="sidebar"><h3>Controllers</h3><ul><li><a href="../controllers/TransactionController.html" class="">TransactionController</a></li><li><a href="../controllers/UserController.html" class="">UserController</a></li><li><a href="../controllers/BudgetController.html" class="">BudgetController</a></li><li><a href="../controllers/GoalController.html" class="">GoalController</a></li><li><a href="../controllers/ReportController.html" class="">ReportController</a></li></ul><h3>Services</h3><ul><li><a href="../services/TransactionService.html" class="">TransactionService</a></li><li><a href="../services/BudgetService.html" class="active">BudgetService</a></li><li><a href="../services/ReportService.html" class="">ReportService</a></li><li><a href="../services/GoalService.html" class="">GoalService</a></li><li><a href="../services/UserService.html" class="">UserService</a></li></ul><h3>Models</h3><ul><li><a href="../models/User.html" class="">User</a></li><li><a href="../models/Transaction.html" class="">Transaction</a></li><li><a href="../models/Budget.html" class="">Budget</a></li><li><a href="../models/Goal.html" class="">Goal</a></li><li><a href="../models/Income.html" class="">Income</a></li></ul><h3>UI</h3><ul><li><a href="../ui/LoginScreen.html" class="">LoginScreen</a></li><li><a href="../ui/DashboardScreen.html" class="">DashboardScreen</a></li><li><a href="../ui/NavigationService.html" class="">NavigationService</a></li><li><a href="../ui/MainScreen.html" class="">MainScreen</a></li></ul><h3>Data</h3><ul><li><a href="../data/FileDatabase.html" class="">FileDatabase</a></li></ul></div>
+  <div class="main">
+<div class="class-header">
+  <div class="hierarchy">java.lang.Object → app.services.BudgetService</div>
+  <h1><span class="badge badge-service">app.services</span> BudgetService</h1>
+</div>
+<div class="class-body">
+  <div class="class-desc">Service class responsible for managing user budgets. Uses an in-memory <code>ArrayList&lt;Budget&gt;</code> cache (loaded lazily from file) for fast access. Persists changes to <code>budgets.txt</code> via <a href='../data/FileDatabase.html'>FileDatabase</a>.</div>
+  <div class="index-card" style="background:#f0fdf4;border-color:#86efac"><h3>⚙️ SOLID Notes</h3><p><strong>S</strong> – only budget business logic. &nbsp;<strong>O</strong> – new alert thresholds can be added without changing callers. &nbsp;<strong>D</strong> – depends on FileDatabase abstraction for I/O.</p></div>
+</div>
+<h2>Field Summary</h2><table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>FILE_NAME</code></td><td><code>static final String</code></td><td>"budgets.txt"</td></tr><tr><td><code>cache</code></td><td><code>List&lt;Budget&gt;</code></td><td>In-memory ArrayList of Budget objects</td></tr><tr><td><code>cacheLoaded</code></td><td><code>boolean</code></td><td>Lazy-load flag – avoids re-reading file every call</td></tr></tbody></table>
+<h2>Constructor Summary</h2><table><thead><tr><th>Constructor</th><th>Description</th></tr></thead><tbody><tr><td><code>BudgetService()</code></td><td>Creates a new BudgetService with an empty cache.</td></tr></tbody></table>
+<h2>Method Details</h2><div class="method-detail"><div class="method-sig">void create(int userId, String category, double limit)</div><div class="method-body"><p>Creates a new budget, adds it to the ArrayList cache, and persists to file.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>User ID</td></tr><tr><td><code>category</code></td><td><code>String</code></td><td>Budget category</td></tr><tr><td><code>limit</code></td><td><code>double</code></td><td>Spending limit</td></tr></tbody></table></div></div><div class="method-detail"><div class="method-sig">List&lt;Budget&gt; getBudgets(int userId)</div><div class="method-body"><p>Returns all budgets for the user from the in-memory ArrayList.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>User ID</td></tr></tbody></table><div class="returns">↩ Returns: List of Budget objects for the user</div></div></div><div class="method-detail"><div class="method-sig">int update(int userId, String category, double amount)</div><div class="method-body"><p>Adds spending to the matching budget entry and calculates usage percentage. Prints ⚠️ warning at ≥80% and 🚨 alert at ≥100%.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>User ID</td></tr><tr><td><code>category</code></td><td><code>String</code></td><td>Category to update</td></tr><tr><td><code>amount</code></td><td><code>double</code></td><td>Amount to add to spent</td></tr></tbody></table><div class="returns">↩ Returns: <code>0</code>=OK, <code>1</code>=near limit, <code>2</code>=over budget</div></div></div><div class="method-detail"><div class="method-sig">boolean exists(int userId, String category)</div><div class="method-body"><p>Checks if a budget already exists for the given user+category combination.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>User ID</td></tr><tr><td><code>category</code></td><td><code>String</code></td><td>Category name</td></tr></tbody></table><div class="returns">↩ Returns: <code>true</code> if budget exists</div></div></div>
+</div>
+</div>
+<footer>BudgetApp JavaDoc · CS251 – Cairo University · May 2026</footer>
+</body>
+</html>

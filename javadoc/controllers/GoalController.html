@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GoalController – BudgetApp JavaDoc</title>
+<link rel="stylesheet" href="../stylesheet.css">
+</head>
+<body>
+<div class="topbar">
+  <span class="logo">💰 BudgetApp JavaDoc</span>
+  <nav>
+    <a href="../index.html">Overview</a>
+    <a href="../allclasses-index.html">All Classes</a>
+    <a href="../overview-summary.html">Package Summary</a>
+  </nav>
+</div>
+<div class="breadcrumb">
+  <a href="../index.html">BudgetApp</a> › app.controllers › GoalController
+</div>
+<div class="layout">
+  <div class="sidebar"><h3>Controllers</h3><ul><li><a href="../controllers/TransactionController.html" class="">TransactionController</a></li><li><a href="../controllers/UserController.html" class="">UserController</a></li><li><a href="../controllers/BudgetController.html" class="">BudgetController</a></li><li><a href="../controllers/GoalController.html" class="active">GoalController</a></li><li><a href="../controllers/ReportController.html" class="">ReportController</a></li></ul><h3>Services</h3><ul><li><a href="../services/TransactionService.html" class="">TransactionService</a></li><li><a href="../services/BudgetService.html" class="">BudgetService</a></li><li><a href="../services/ReportService.html" class="">ReportService</a></li><li><a href="../services/GoalService.html" class="">GoalService</a></li><li><a href="../services/UserService.html" class="">UserService</a></li></ul><h3>Models</h3><ul><li><a href="../models/User.html" class="">User</a></li><li><a href="../models/Transaction.html" class="">Transaction</a></li><li><a href="../models/Budget.html" class="">Budget</a></li><li><a href="../models/Goal.html" class="">Goal</a></li><li><a href="../models/Income.html" class="">Income</a></li></ul><h3>UI</h3><ul><li><a href="../ui/LoginScreen.html" class="">LoginScreen</a></li><li><a href="../ui/DashboardScreen.html" class="">DashboardScreen</a></li><li><a href="../ui/NavigationService.html" class="">NavigationService</a></li><li><a href="../ui/MainScreen.html" class="">MainScreen</a></li></ul><h3>Data</h3><ul><li><a href="../data/FileDatabase.html" class="">FileDatabase</a></li></ul></div>
+  <div class="main">
+<div class="class-header">
+  <div class="hierarchy">java.lang.Object → app.controllers.GoalController</div>
+  <h1><span class="badge badge-controller">app.controllers</span> GoalController</h1>
+</div>
+<div class="class-body">
+  <div class="class-desc">Controller class responsible for handling goal-related requests and delegating them to <a href='../services/GoalService.html'>GoalService</a>.</div>
+  <div class="index-card" style="background:#f0fdf4;border-color:#86efac"><h3>⚙️ SOLID Notes</h3><p><strong>S</strong> – handles ONLY goal domain requests.</p></div>
+</div>
+
+<h2>Constructor Summary</h2><table><thead><tr><th>Constructor</th><th>Description</th></tr></thead><tbody><tr><td><code>GoalController()</code></td><td>Creates a new GoalController with a default GoalService instance.</td></tr></tbody></table>
+<h2>Method Details</h2><div class="method-detail"><div class="method-sig">void create(int userId, String name, double target)</div><div class="method-body"><p>Creates a new financial or personal savings goal for a user.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>User ID</td></tr><tr><td><code>name</code></td><td><code>String</code></td><td>Goal name (e.g., Buy a car)</td></tr><tr><td><code>target</code></td><td><code>double</code></td><td>Target amount to save</td></tr></tbody></table></div></div><div class="method-detail"><div class="method-sig">void addProgress(int userId, String name, double amount)</div><div class="method-body"><p>Contributes an amount toward an existing savings goal and prints progress percentage.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>userId</code></td><td><code>int</code></td><td>User ID</td></tr><tr><td><code>name</code></td><td><code>String</code></td><td>Goal name</td></tr><tr><td><code>amount</code></td><td><code>double</code></td><td>Contribution amount</td></tr></tbody></table></div></div>
+</div>
+</div>
+<footer>BudgetApp JavaDoc · CS251 – Cairo University · May 2026</footer>
+</body>
+</html>

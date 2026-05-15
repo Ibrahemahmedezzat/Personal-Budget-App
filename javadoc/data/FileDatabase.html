@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FileDatabase – BudgetApp JavaDoc</title>
+<link rel="stylesheet" href="../stylesheet.css">
+</head>
+<body>
+<div class="topbar">
+  <span class="logo">💰 BudgetApp JavaDoc</span>
+  <nav>
+    <a href="../index.html">Overview</a>
+    <a href="../allclasses-index.html">All Classes</a>
+    <a href="../overview-summary.html">Package Summary</a>
+  </nav>
+</div>
+<div class="breadcrumb">
+  <a href="../index.html">BudgetApp</a> › app.data › FileDatabase
+</div>
+<div class="layout">
+  <div class="sidebar"><h3>Controllers</h3><ul><li><a href="../controllers/TransactionController.html" class="">TransactionController</a></li><li><a href="../controllers/UserController.html" class="">UserController</a></li><li><a href="../controllers/BudgetController.html" class="">BudgetController</a></li><li><a href="../controllers/GoalController.html" class="">GoalController</a></li><li><a href="../controllers/ReportController.html" class="">ReportController</a></li></ul><h3>Services</h3><ul><li><a href="../services/TransactionService.html" class="">TransactionService</a></li><li><a href="../services/BudgetService.html" class="">BudgetService</a></li><li><a href="../services/ReportService.html" class="">ReportService</a></li><li><a href="../services/GoalService.html" class="">GoalService</a></li><li><a href="../services/UserService.html" class="">UserService</a></li></ul><h3>Models</h3><ul><li><a href="../models/User.html" class="">User</a></li><li><a href="../models/Transaction.html" class="">Transaction</a></li><li><a href="../models/Budget.html" class="">Budget</a></li><li><a href="../models/Goal.html" class="">Goal</a></li><li><a href="../models/Income.html" class="">Income</a></li></ul><h3>UI</h3><ul><li><a href="../ui/LoginScreen.html" class="">LoginScreen</a></li><li><a href="../ui/DashboardScreen.html" class="">DashboardScreen</a></li><li><a href="../ui/NavigationService.html" class="">NavigationService</a></li><li><a href="../ui/MainScreen.html" class="">MainScreen</a></li></ul><h3>Data</h3><ul><li><a href="../data/FileDatabase.html" class="active">FileDatabase</a></li></ul></div>
+  <div class="main">
+<div class="class-header">
+  <div class="hierarchy">java.lang.Object → app.data.FileDatabase</div>
+  <h1><span class="badge badge-data">app.data</span> FileDatabase</h1>
+</div>
+<div class="class-body">
+  <div class="class-desc">Utility class (Data Access Object) for flat-file persistence. All methods are <code>static</code>. Reads and writes comma-delimited lines in the <code>data/</code> directory.</div>
+  <div class="index-card" style="background:#f0fdf4;border-color:#86efac"><h3>⚙️ SOLID Notes</h3><p><strong>S</strong> – only file I/O, no business logic. &nbsp;<strong>O</strong> – switching to a database requires changing only this class. &nbsp;<strong>D</strong> – all services depend on this abstraction, not on raw file APIs.</p></div>
+</div>
+
+<h2>Constructor Summary</h2><table><thead><tr><th>Constructor</th><th>Description</th></tr></thead><tbody><tr><td><code>FileDatabase()</code></td><td>Default constructor (not intended for instantiation).</td></tr></tbody></table>
+<h2>Method Details</h2><div class="method-detail"><div class="method-sig">static void save(String file, String data)</div><div class="method-body"><p>Appends a new comma-delimited line to the specified file.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>file</code></td><td><code>String</code></td><td>File name (e.g., users.txt)</td></tr><tr><td><code>data</code></td><td><code>String</code></td><td>CSV line to append</td></tr></tbody></table></div></div><div class="method-detail"><div class="method-sig">static List&lt;String[]&gt; read(String file)</div><div class="method-body"><p>Reads all lines from the file and splits each by comma into a String[].</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>file</code></td><td><code>String</code></td><td>File name</td></tr></tbody></table><div class="returns">↩ Returns: List&lt;String[]&gt; – one array per record line</div></div></div><div class="method-detail"><div class="method-sig">static void overwrite(String file, List&lt;String&gt; lines)</div><div class="method-body"><p>Replaces the entire file content with the given list of lines. Used for updates.</p><table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>file</code></td><td><code>String</code></td><td>File name</td></tr><tr><td><code>lines</code></td><td><code>List&lt;String&gt;</code></td><td>New file content</td></tr></tbody></table></div></div>
+</div>
+</div>
+<footer>BudgetApp JavaDoc · CS251 – Cairo University · May 2026</footer>
+</body>
+</html>

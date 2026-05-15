@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Overview – BudgetApp JavaDoc</title>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<div class="topbar">
+  <span class="logo">💰 BudgetApp JavaDoc</span>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="allclasses-index.html">All Classes</a>
+    <a href="overview-summary.html">Package Summary</a>
+  </nav>
+</div>
+<div class="breadcrumb">
+  <a href="index.html">BudgetApp</a> › Overview
+</div>
+<div class="layout">
+  <div class="sidebar"><h3>Controllers</h3><ul><li><a href="controllers/TransactionController.html" class="">TransactionController</a></li><li><a href="controllers/UserController.html" class="">UserController</a></li><li><a href="controllers/BudgetController.html" class="">BudgetController</a></li><li><a href="controllers/GoalController.html" class="">GoalController</a></li><li><a href="controllers/ReportController.html" class="">ReportController</a></li></ul><h3>Services</h3><ul><li><a href="services/TransactionService.html" class="">TransactionService</a></li><li><a href="services/BudgetService.html" class="">BudgetService</a></li><li><a href="services/ReportService.html" class="">ReportService</a></li><li><a href="services/GoalService.html" class="">GoalService</a></li><li><a href="services/UserService.html" class="">UserService</a></li></ul><h3>Models</h3><ul><li><a href="models/User.html" class="">User</a></li><li><a href="models/Transaction.html" class="">Transaction</a></li><li><a href="models/Budget.html" class="">Budget</a></li><li><a href="models/Goal.html" class="">Goal</a></li><li><a href="models/Income.html" class="">Income</a></li></ul><h3>UI</h3><ul><li><a href="ui/LoginScreen.html" class="">LoginScreen</a></li><li><a href="ui/DashboardScreen.html" class="">DashboardScreen</a></li><li><a href="ui/NavigationService.html" class="">NavigationService</a></li><li><a href="ui/MainScreen.html" class="">MainScreen</a></li></ul><h3>Data</h3><ul><li><a href="data/FileDatabase.html" class="">FileDatabase</a></li></ul></div>
+  <div class="main">
+<h1>💰 BudgetApp – API Documentation</h1>
+<p>Personal Budget Management Application · CS251 Introduction to Software Engineering · Cairo University · May 2026</p>
+<br>
+<div class="index-card" style="background:#EEF2FF;border-color:#4F46E5">
+  <h3>🏗️ Architecture: MVC Pattern</h3>
+  <p>
+    <strong>UI (View)</strong> → <strong>Controllers</strong> → <strong>Services (Model/Logic)</strong>
+    → <strong>FileDatabase (Data)</strong>
+    &nbsp;|&nbsp;
+    Models: plain POJOs (User, Transaction, Budget, Goal, Income)
+    &nbsp;|&nbsp;
+    SOLID principles applied throughout.
+  </p>
+</div>
+<h2>Controllers</h2><div class="index-card"><h3><span class="badge badge-controller">Controller</span> <a href="controllers/UserController.html">UserController</a></h3><p>User auth &amp; budget delegation</p></div><div class="index-card"><h3><span class="badge badge-controller">Controller</span> <a href="controllers/TransactionController.html">TransactionController</a></h3><p>Add transactions</p></div><div class="index-card"><h3><span class="badge badge-controller">Controller</span> <a href="controllers/BudgetController.html">BudgetController</a></h3><p>Budget CRUD &amp; alerts</p></div><div class="index-card"><h3><span class="badge badge-controller">Controller</span> <a href="controllers/GoalController.html">GoalController</a></h3><p>Goal creation &amp; progress</p></div><div class="index-card"><h3><span class="badge badge-controller">Controller</span> <a href="controllers/ReportController.html">ReportController</a></h3><p>Financial reports</p></div><h2>Services</h2><div class="index-card"><h3><span class="badge badge-service">Service</span> <a href="services/UserService.html">UserService</a></h3><p>Signup, login, budget update</p></div><div class="index-card"><h3><span class="badge badge-service">Service</span> <a href="services/TransactionService.html">TransactionService</a></h3><p>Record transactions</p></div><div class="index-card"><h3><span class="badge badge-service">Service</span> <a href="services/BudgetService.html">BudgetService</a></h3><p>ArrayList cache + file persist</p></div><div class="index-card"><h3><span class="badge badge-service">Service</span> <a href="services/GoalService.html">GoalService</a></h3><p>Savings goal tracking</p></div><div class="index-card"><h3><span class="badge badge-service">Service</span> <a href="services/ReportService.html">ReportService</a></h3><p>Spending analytics</p></div><h2>Models</h2><div class="index-card"><h3><span class="badge badge-model">Model</span> <a href="models/User.html">User</a></h3><p>id, name, password, salary</p></div><div class="index-card"><h3><span class="badge badge-model">Model</span> <a href="models/Transaction.html">Transaction</a></h3><p>userId, amount, category</p></div><div class="index-card"><h3><span class="badge badge-model">Model</span> <a href="models/Budget.html">Budget</a></h3><p>userId, category, limit, spent</p></div><div class="index-card"><h3><span class="badge badge-model">Model</span> <a href="models/Goal.html">Goal</a></h3><p>userId, name, target, saved</p></div><div class="index-card"><h3><span class="badge badge-model">Model</span> <a href="models/Income.html">Income</a></h3><p>userId, amount</p></div><h2>UI</h2><div class="index-card"><h3><span class="badge badge-ui">U</span> <a href="ui/LoginScreen.html">LoginScreen</a></h3><p>Login &amp; register form</p></div><div class="index-card"><h3><span class="badge badge-ui">U</span> <a href="ui/DashboardScreen.html">DashboardScreen</a></h3><p>Overview: balance, budgets, recent tx</p></div><div class="index-card"><h3><span class="badge badge-ui">U</span> <a href="ui/NavigationService.html">NavigationService</a></h3><p>Back/forward stack + screen routing</p></div><div class="index-card"><h3><span class="badge badge-ui">U</span> <a href="ui/MainScreen.html">MainScreen</a></h3><p>App shell with sidebar</p></div><h2>Data</h2><div class="index-card"><h3><span class="badge badge-data">Dat</span> <a href="data/FileDatabase.html">FileDatabase</a></h3><p>save() / read() / overwrite() – flat file I/O</p></div>
+</div>
+</div>
+<footer>BudgetApp JavaDoc · CS251 – Cairo University · May 2026</footer>
+</body>
+</html>
