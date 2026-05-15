@@ -65,11 +65,10 @@ Summary statistics for better decision-making
 
 🧮 Collections Framework (Lists, Maps, etc.)
 
-🏗️ Project Architecture
-
-The project follows a layered modular structure:
 
 ### 🏗️ Project Architecture
+
+The project follows a layered modular structure:
 
 ```text
 BudgetApp/
