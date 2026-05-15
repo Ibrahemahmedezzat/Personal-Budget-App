@@ -1,71 +1,117 @@
-# 💰 Budget Management App – v2.1
+📊 Budget App
 
-## ▶ طريقة التشغيل الوحيدة المطلوبة
+A Java Console-Based Personal Finance Management System designed to help users efficiently manage their income, expenses, budgets, and savings goals while generating insightful financial reports and statistics.
 
-```bash
-cd BudgetManagementApp
-mvn javafx:run
-```
+🎯 Project Overview
 
-Maven بيحمّل JavaFX أوتوماتيك – مش محتاج أي إعداد تاني.
+The Budget App is built to simulate a real-world personal finance tracker.
+It allows users to take full control of their financial life by:
 
----
+Tracking daily expenses and income
+Organizing budgets per category
+Setting savings goals
+Receiving financial alerts
+Viewing detailed reports and statistics
 
-## VS Code – طريقة الـ Maven Sidebar
+The system is fully console-based and follows Object-Oriented Programming (OOP) principles with modular architecture and file-based data persistence.
 
-1. افتح الفولدر في VS Code
-2. من الشريط الجانبي → أيقونة **M** (Maven)
-3. `BudgetManagementApp` → `Plugins` → `javafx` → دوس مرتين على **`javafx:run`**
+✨ Key Features
 
----
+🔐 Authentication System
+User Signup
+Secure Login
+Basic session handling
+💰 Budget Management
+Create budgets per category (Food, Transport, etc.)
+Set monthly spending limits
+Monitor remaining budget
+📉 Expense & Income Tracking
+Add income sources
+Record daily expenses
+Categorize transactions
+Track financial flow over time
+🚨 Financial Alerts
+Alerts when spending exceeds budget limits
+Warnings for low savings balance
+Smart notifications based on user activity
+🎯 Savings Goals
+Set financial goals (e.g., Buy a Laptop, Travel)
+Track progress toward goals
+Automatic savings calculations
+📊 Reports & Statistics
+Monthly income vs expenses report
+Category-based spending analysis
+Summary statistics for better decision-making
+🧠 Technologies Used
+☕ Java (Core Programming Language)
+🧱 Object-Oriented Programming (OOP Principles)
+📁 File Handling (Data Storage without Database)
+🧮 Collections Framework (Lists, Maps, etc.)
+🏗️ Project Architecture
 
-## 🔴 سبب الـ Error القديم
+The project follows a layered modular structure:
 
-```
-NoClassDefFoundError: Stage
-```
+BudgetApp/
+│
+├── models/       
+│   ├── User
+│   ├── Budget
+│   ├── Expense
+│   ├── Income
+│   └── SavingsGoal
+│
+├── services/
+│   ├── AuthService
+│   ├── BudgetService
+│   ├── TransactionService
+│   ├── ReportService
+│
+├── ui/
+│   ├── MainMenu
+│   ├── UserMenu
+│   └── InputHandler
+│
+├── database/
+│   ├── FileManager
+│   ├── DataStorage
+│
+└── Main.java   # Application Entry Point
+▶️ How to Run the Project
+1️⃣ Prerequisites
+Install Java JDK 8+
+Install IntelliJ IDEA / VS Code
+2️⃣ Setup
+Clone or download the project
+Open it in your IDE
+3️⃣ Run
+Compile all .java files
+Run Main.java
+4️⃣ Start Using
+Create an account
+Login
+Start managing your budget 💸
+📈 Project Goals
 
-JavaFX مش جزء من Java العادية منذ Java 11.  
-الحل: Maven في `pom.xml` بيحمّلها تلقائياً.
+This project was developed to:
 
----
-
-## ✅ التحديثات في v2.1
-
-| الجديد | التفاصيل |
-|--------|----------|
-| **NavigationService** | كلاس منفصل للتنقل (SOLID – Single Responsibility) |
-| **Back / Forward** | أزرار رجوع وتقدم في شريط أعلى الشاشة |
-| **BudgetService ArrayList** | الـ budgets بتتخزن في `ArrayList` في الذاكرة + ملف |
-| **JDK 25 compatible** | `pom.xml` يشتغل مع JDK 17 و 21 و 25 |
-| **ikonli** | مكتبة أيقونات FontAwesome جاهزة للاستخدام |
-
----
-
-## هيكل المشروع
-
-```
-BudgetManagementApp/
-├── pom.xml                          ← Maven config (JDK 25 safe)
-├── data/
-│   ├── users.txt
-│   ├── transactions.txt
-│   ├── budgets.txt
-│   └── goals.txt
-└── src/main/java/app/
-    ├── Main.java
-    ├── ui/
-    │   ├── AppStyles.java           ← كل الألوان والـ CSS
-    │   ├── NavigationService.java   ← SOLID: التنقل هنا بس
-    │   ├── LoginScreen.java
-    │   ├── MainScreen.java          ← Sidebar + Back/Forward
-    │   ├── DashboardScreen.java
-    │   ├── TransactionScreen.java
-    │   ├── BudgetScreen.java
-    │   ├── GoalScreen.java
-    │   └── ReportScreen.java
-    ├── controllers/
-    ├── services/                    ← BudgetService: ArrayList + file
-    ├── models/
-    └── data/
-```
+Strengthen understanding of OOP concepts
+Practice real-world system design
+Improve problem-solving with Java
+Simulate a financial management system
+👥 Team Members
+Ibrahem Ahmed
+Mohamed Abdullah 
+Hesham Mohamed
+Youssef Sayed
+🚀 Future Improvements
+🖥️ GUI version using JavaFX or Swing
+🗄️ Database integration (MySQL / SQLite)
+📊 Graphical reports and charts
+☁️ Cloud synchronization
+📱 Mobile version (Android app)
+🔔 Advanced smart notifications system
+📌 Notes
+This project is fully console-based
+Data is stored using file handling (no database)
+Designed for educational and learning purposes
+Focuses on clean architecture and OOP design
