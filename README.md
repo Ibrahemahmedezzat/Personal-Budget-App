@@ -56,10 +56,15 @@ Category-based spending analysis
 Summary statistics for better decision-making
 
 🧠 Technologies Used
+
 ☕ Java (Core Programming Language)
+
 🧱 Object-Oriented Programming (OOP Principles)
+
 📁 File Handling (Data Storage without Database)
+
 🧮 Collections Framework (Lists, Maps, etc.)
+
 🏗️ Project Architecture
 
 The project follows a layered modular structure:
@@ -89,6 +94,7 @@ BudgetApp/
 │   ├── DataStorage
 │
 └── Main.java
+
 ▶️ How to Run the Project
 
 1️⃣ Prerequisites
