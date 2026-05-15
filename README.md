@@ -69,7 +69,8 @@ Summary statistics for better decision-making
 
 The project follows a layered modular structure:
 
-### 🏗️ Project Architecture
+🏗️ Project Architecture
+###
 
 ```text
 BudgetApp/
@@ -93,7 +94,6 @@ BudgetApp/
     │   ├── FileManager.java
     │   └── DataStorage.java
     └── Main.java              # Application Entry Point
-
 ▶️ How to Run the Project
 
 1️⃣ Prerequisites
