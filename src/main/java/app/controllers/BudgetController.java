@@ -22,7 +22,7 @@ public class BudgetController {
      * @return 0=ok, 1=near limit, 2=exceeded
      */
     public int checkBudget(int userId, String category, double amount) {
-        return  budgetService.update(userId, category, amount);
+        return budgetService.update(userId, category, amount);
     }
 
     /** Get all budgets for user from in-memory ArrayList. */
