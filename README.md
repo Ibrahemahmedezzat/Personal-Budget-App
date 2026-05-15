@@ -9,9 +9,13 @@ The Budget App is built to simulate a real-world personal finance tracker.
 It allows users to take full control of their financial life by:
 
 Tracking daily expenses and income
+
 Organizing budgets per category
+
 Setting savings goals
+
 Receiving financial alerts
+
 Viewing detailed reports and statistics
 
 The system is fully console-based and follows Object-Oriented Programming (OOP) principles with a modular architecture and file-based data storage.
@@ -21,20 +25,27 @@ The system is fully console-based and follows Object-Oriented Programming (OOP) 
 🔐 Authentication System
 
 User Signup
+
 Secure Login
+
 Basic session handling
 
 💰 Budget Management
 
 Create budgets per category (Food, Transport, etc.)
+
 Set monthly spending limits
+
 Monitor remaining budget
 
 📉 Expense & Income Tracking
 
 Add income sources
+
 Record daily expenses
+
 Categorize transactions
+
 Track financial flow over time
 
 🚨 Financial Alerts
@@ -46,13 +57,17 @@ Smart notifications based on user activity
 🎯 Savings Goals
 
 Set financial goals (e.g., Buy a Laptop, Travel)
+
 Track progress toward goals
+
 Automatic savings calculations
 
 📊 Reports & Statistics
 
 Monthly income vs expenses report
+
 Category-based spending analysis
+
 Summary statistics for better decision-making
 
 🧠 Technologies Used
@@ -98,22 +113,27 @@ BudgetApp/
 1️⃣ Prerequisites
 
 Install Java JDK 8+
+
 Install IntelliJ IDEA or VS Code
 
 2️⃣ Setup
 
 Clone or download the project
+
 Open it in your IDE
 
 3️⃣ Run
 
 Compile all .java files
+
 Run Main.java
 
 4️⃣ Start Using
 
 Create an account
+
 Login
+
 Start managing your budget 💸
 
 📈 Project Goals
@@ -121,24 +141,37 @@ Start managing your budget 💸
 This project was developed to:
 
 Strengthen understanding of OOP concepts
+
 Practice real-world system design
+
 Improve problem-solving with Java
+
 Simulate a financial management system
 
 👥 Team Members
+
 Ibrahim Ahmed
+
 Mohamed Abdullah 
+
 Hesham Mohamed
+
 Youssef Sayed
 
 🚀 Future Improvements
 
 🖥️ GUI version using JavaFX or Swing
-🗄️ Database integration (MySQL / SQLite)
+
+🗄️ Database integration (MySQL / SQLite
+
 📊 Graphical reports and charts
+
 ☁️ Cloud synchronization
+
 📱 Mobile version (Android app)
+
 🔔 Advanced smart notifications system
+
 📌 Notes
 
 This project is fully console-based
